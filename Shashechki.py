@@ -54,7 +54,7 @@ class Checker(Unit):
     """
     Класс, представляющий обычную шашку.
 
-    Наследует атрибуты и методы от класса Piece.
+    Наследует атрибуты и методы от класса Unit.
     """
     def __init__(self, color):
         """
@@ -181,7 +181,7 @@ class Board:
             self.grid[end[0]][end[1]] = piece
             self.grid[start[0]][start[1]] = None
             if (piece.color == 'W' and end[0] == 0) or (piece.color == 'B' and end[0] == 7):
-                self.grid[end[0]][end[1]] = Piece(piece.color, 'D')  # Превращение в дамку
+                self.grid[end[0]][end[1]] = Unit(piece.color, 'D')  # Превращение в дамку
             return True
         return False
 
